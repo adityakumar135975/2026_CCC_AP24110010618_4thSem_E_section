@@ -54,7 +54,7 @@ def greedy_scheduler(
     # ── Print selected projects ──
     _out("\n  Projects Taken:\n", file)
     for i, p in enumerate(selected):
-        _out(f"    {i+1}. {p.name}\n", file)
+        _out(f"    {i+1}. {p.name}  (Day {p.start} - Day {p.end}, Rs.{p.payment})\n", file)
 
     result = (
         f"\n  Total Projects : {len(selected)}"
