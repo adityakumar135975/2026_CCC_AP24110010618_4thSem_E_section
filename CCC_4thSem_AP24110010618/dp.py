@@ -101,7 +101,7 @@ def dp_scheduler(
     total_payment = 0
     _out("\n  Projects Taken:\n", file)
     for j, p in enumerate(selected):
-        _out(f"    {j+1}. {p.name}  (Rs.{p.payment})\n", file)
+        _out(f"    {j+1}. {p.name}  (Day {p.start} - Day {p.end}, Rs.{p.payment})\n", file)
         total_payment += p.payment
 
     result = (
