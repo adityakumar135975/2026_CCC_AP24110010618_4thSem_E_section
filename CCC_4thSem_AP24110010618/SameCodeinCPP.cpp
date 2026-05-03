@@ -175,7 +175,7 @@ void greedy_scheduler(vector<Project>& projects, ofstream& file) {
     // Print selected projects
     _out("\n  Projects Taken:\n", file);
     for (int i = 0; i < (int)selected.size(); i++) {
-        _out("    " + to_string(i+1) + ". " + selected[i].name + "\n", file);
+        _out("    " + to_string(i+1) + ". " + selected[i].name + "  (Day " + to_string(selected[i].start) + " - Day " + to_string(selected[i].end) + ", Rs." + to_string(selected[i].payment) + ")\n", file);
     }
 
     string result =
@@ -319,7 +319,9 @@ void dp_scheduler(vector<Project>& projects, ofstream& file) {
     _out("\n  Projects Taken:\n", file);
     for (int j = 0; j < (int)selected.size(); j++) {
         _out("    " + to_string(j+1) + ". " + selected[j].name +
-             "  (Rs." + to_string(selected[j].payment) + ")\n", file);
+             "  (Day " + to_string(selected[j].start) +
+             " - Day " + to_string(selected[j].end) +
+             ", Rs." + to_string(selected[j].payment) + ")\n", file);
         total_payment += selected[j].payment;
     }
 
